@@ -16,7 +16,6 @@ public class WebRequestController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showIndexPage(ModelMap model) {
 		Cart cart = cartServiceimpl.getAllCart();
-		System.out.println("^^^^^^^^^^^^^^^^^^^^^^");
 		model.addAttribute("cartinfo", cart);
 		System.out.println(cart);
 		return "show";
