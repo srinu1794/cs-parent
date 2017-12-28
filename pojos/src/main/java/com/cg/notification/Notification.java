@@ -2,10 +2,15 @@ package com.cg.notification;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Notification implements Serializable {
 
 	private static final long serialVersionUID = 5493907539271796150L;
 	
+	@Id
 	private String id;
 	private ReadStatus readStatus;
 	private String recipientId;
