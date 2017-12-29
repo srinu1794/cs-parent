@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.notification.Notification;
+import com.cg.notification.RecipientType;
 import com.cg.notification.repo.NotificationRepo;
 
 import reactor.bus.Event;
@@ -66,5 +67,11 @@ public class NotificationServiceimpl implements NotificationService {
 	@Override
 	public List<Notification> getByRecipientId(String recipientId) {
 		return notificationRepo.getByRecipientId(recipientId);
+	}
+
+	@Override
+	public List<Notification> getByRecipientType(RecipientType type) {
+		// TODO Auto-generated method stub
+		return notificationRepo.getByRecipientType(type);
 	}
 }

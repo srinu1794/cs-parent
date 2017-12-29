@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cg.notification.Notification;
+import com.cg.notification.RecipientType;
 
 @Repository
 public class NotificationRepoImpl implements NotificationRepo {
@@ -36,6 +37,11 @@ public class NotificationRepoImpl implements NotificationRepo {
 	@Override
 	public List<Notification> getByRecipientId(String id) {
 		return mongoRepo.findByRecipientId(id);
+	}
+
+	@Override
+	public List<Notification> getByRecipientType(RecipientType type) {
+		return mongoRepo.findByRecipientType(type);
 	}
 
 }

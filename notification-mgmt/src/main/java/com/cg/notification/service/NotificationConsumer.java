@@ -16,7 +16,7 @@ public class NotificationConsumer implements Consumer<Event<Notification>> {
 
 	@Override
 	public void accept(Event<Notification> notificationEvent) {
-		Notification notification = notificationEvent.getData();
+		//Notification notification = notificationEvent.getData();
 		// TODO add logic to send email/sms notification
 		System.err.println("From reveiver");
 	}
