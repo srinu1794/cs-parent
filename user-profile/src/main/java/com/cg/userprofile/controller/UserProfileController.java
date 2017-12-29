@@ -24,13 +24,14 @@ public class UserProfileController {
 		return profileRepo.save(user);
 	}
 
-	@RequestMapping(value = "findbyid", method = RequestMethod.POST, params = { "userId" })
+	@RequestMapping(value = "findbyid", method = RequestMethod.GET, params = { "userId" })
 	public User getUserById(@RequestParam(value = "userId", required = true) String userId) {
 		return profileRepo.findOne(Long.parseLong(userId));
 	}
 
+	@RequestMapping(value = "all", method = RequestMethod.GET)
 	public List<User> getAllUser() {
-		return null;
+		return profileRepo.findAll();
 	}
 
 	@RequestMapping(value = "credit", method = RequestMethod.POST, params = { "userId", "amount" })
